@@ -58,18 +58,23 @@ $(() => {
 
            $('.menu-icon-link').click();
            expect($('body').hasClass('menu-hidden')).toBe(true);
-       });
+        });
+    });
+
+
+    describe('Initial Entries', () => {
+
+        beforeEach((done) => {
+            loadFeed(0, done);
+        });
+
+        /* Make sure the entry element is not empty */
+        it('contain at least one entry element', (done) => {
+            expect($('.entry').length).toBeGreaterThan(0);
+            done();
+        });
     });
     
-
-    /* TODO: Write a new test suite named "Initial Entries" */
-
-        /* TODO: Write a test that ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
-         */
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
