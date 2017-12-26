@@ -64,9 +64,7 @@ $(() => {
 
     describe('Initial Entries', () => {
 
-        beforeEach((done) => {
-            loadFeed(0, done);
-        });
+        beforeEach((done) => loadFeed(0, done));
 
         /* Make sure the entry element is not empty */
         it('contain at least one entry element', (done) => {
