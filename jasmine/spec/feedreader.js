@@ -8,17 +8,17 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
-$(function() {
+$(() => {
 
-    describe('RSS Feeds', function() {
+    describe('RSS Feeds', () => {
 
-        it('are defined', function() {
+        it('are defined', () => {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
 
 
-        it('have a URL in each feed', function() {
+        it('have a URL in each feed', () => {
             for (let feed of allFeeds) {
               expect(feed.url).toBeDefined();
               expect(feed.url).not.toBe("");
@@ -26,7 +26,7 @@ $(function() {
         });
 
 
-        it('have a name in each feed', function() {
+        it('have a name in each feed', () => {
             for (let feed of allFeeds) {
                 expect(feed.name).toBeDefined();
                 expect(feed.name).not.toBe("");
@@ -35,9 +35,9 @@ $(function() {
     });
 
 
-    describe('The menu', function() {
+    describe('The menu', () => {
 
-        it('is hidden by default', function() {
+        it('is hidden by default', () => {
             expect($('body')).toHaveClass('menu-hidden');
         });
 
