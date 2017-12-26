@@ -12,12 +12,17 @@ $(() => {
 
     describe('RSS Feeds', () => {
 
+        /* Check allFeeds variable has been defined and that
+         * it is not empty.
+         */
         it('are defined', () => {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
 
-
+        /* Ensure every feed in allFeeds has a URL and that
+         * it is not empty.
+         */
         it('have a URL in each feed', () => {
             for (let feed of allFeeds) {
               expect(feed.url).toBeDefined();
@@ -25,7 +30,9 @@ $(() => {
             }
         });
 
-
+        /* Ensure every feed in allFeeds has a name and that
+         * it is not empty.
+         */
         it('have a name in each feed', () => {
             for (let feed of allFeeds) {
                 expect(feed.name).toBeDefined();
@@ -37,6 +44,7 @@ $(() => {
 
     describe('The menu', () => {
 
+        /* Ensure the menu element is hidden by default */
         it('is hidden by default', () => {
             expect($('body')).toHaveClass('menu-hidden');
         });
