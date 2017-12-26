@@ -74,12 +74,23 @@ $(() => {
             done();
         });
     });
-    
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+    describe('New Feed Selection', () => {
+
+        let oldFeed;
+        beforeEach((done) => {
+            loadFeed(0, () => {
+                oldFeed = $('.feed').html();
+                loadFeed(1, done);
+            });
+        });
+
+        /* Make sure the content changes when loaded a new feed */
+        it('changes content when a new feed is loaded', (done) => {
+            const newFeed = $('.feed').html();
+            expect(oldFeed).not.toEqual(newFeed);
+            done();
+        });
+    });
 });
