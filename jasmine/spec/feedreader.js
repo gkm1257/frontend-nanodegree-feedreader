@@ -67,9 +67,8 @@ $(() => {
         beforeEach((done) => loadFeed(0, done));
 
         /* Make sure the entry element is not empty */
-        it('contain at least one entry element', (done) => {
+        it('contain at least one entry element', () => {
             expect($('.feed .entry').length).toBeGreaterThan(0);
-            done();
         });
     });
 
