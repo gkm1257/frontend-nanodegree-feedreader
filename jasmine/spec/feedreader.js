@@ -49,14 +49,18 @@ $(() => {
             expect($('body')).toHaveClass('menu-hidden');
         });
 
-    });
-    /* TODO: Write a new test suite named "The menu" */
+        /* Ensure the menu element changes visibility when clicked
+         * the menu icon
+         */
+        it('changes visibility when clicked the menu icon', () => {
+           $('.menu-icon-link').click();
+           expect($('body')).not.toHaveClass('menu-hidden');
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+           $('.menu-icon-link').click();
+           expect($('body').hasClass('menu-hidden')).toBe(true);
+       });
+    });
+    
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
