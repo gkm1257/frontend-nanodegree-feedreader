@@ -68,7 +68,7 @@ $(() => {
 
         /* Make sure the entry element is not empty */
         it('contain at least one entry element', (done) => {
-            expect($('.entry').length).toBeGreaterThan(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
             done();
         });
     });
